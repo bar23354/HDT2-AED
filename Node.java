@@ -1,11 +1,22 @@
+/*
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos – sección 40
+ * Roberto Barreda – 23354 | Mia Fuentes - 23775
+ */
+
 public class Node<T> {
     T data;
     Node<T> next;
-    public TgetData(){
+    public Node(T value) {
+        data = value;
+        next = null;
+    }
+
+    public T getData(){
         return data;
     }
 
-    public Node<T> getNext(){
+    public Node<T> getNextNode(){
         return next;
     }
 
@@ -13,8 +24,9 @@ public class Node<T> {
         data = newData;
     }
 
-    public void setNext(Node<T>n)
-    next =n;
+    public void setNextNode(Node<T>n){
+        next = n;
+    }
 
 }
 

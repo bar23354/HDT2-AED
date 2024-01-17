@@ -1,3 +1,9 @@
+/*
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos – sección 40
+ * Roberto Barreda – 23354 | Mia Fuentes - 23775
+ */
+
 public class CustomStack<T>{
 private Node<T> lastNode;
 private Node<T> fistNode;
@@ -15,7 +21,7 @@ private Node<T> fistNode;
         if (fistNode == null){
             return null;
         }else{
-            T data = fistNode.getData();
+            T data = (T) fistNode.getData();
             fistNode = fistNode.getNextNode();
             return data;
         }
