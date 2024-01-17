@@ -17,6 +17,7 @@ private Node<T> fistNode;
             lastNode = node;
         }
     }
+
     public T pop(){
         if (fistNode == null){
             return null;
