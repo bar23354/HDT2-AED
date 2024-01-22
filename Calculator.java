@@ -7,3 +7,4 @@
 public interface Calculator {
     int evaluatePostfix(String expression) throws IllegalArgumentException;
 }
+
