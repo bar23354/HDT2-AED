@@ -16,6 +16,7 @@ public class CalculatorPostfix implements Calculator {
 
     @Override
     public int evaluatePostfix(String expression) throws IllegalArgumentException {
+        // Dividir la expresión en tokens separados por espacios.
         String[] tokens = expression.split(" ");
 
         for (String token : tokens) {
@@ -42,7 +43,48 @@ public class CalculatorPostfix implements Calculator {
 
         return stack.pop();
     }
+    
+    //Verifica si un token es un operando
+    private boolean isOperand(String token) {
+        try {
+            Integer.parseInt(token);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
-    //MIaaaaaa!! Llenar aqui
+    /**
+     * Realiza la operación especificada entre dos operandos.
+     *
+     * @param operator El operador a aplicar.
+     * @param operand1 El primer operando.
+     * @param operand2 El segundo operando.
+     * @return El resultado de la operación.
+     * @throws IllegalArgumentException Si se intenta dividir por cero.
+     */
+    
+    private int performOperation(char operador, int operand1, int operand2) {
+        switch (operador) {
+            case '+':
+                return operand1 + operand2;
+            case '-':
+                return operand1 - operand2;
+            case '*':
+                return operand1 * operand2;
+            case '/':
+                if (operand2 == 0) {
+                    throw new IllegalArgumentException("Cannot divide by zero");
+                }
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Invalid operator: " + operador);
+        }
+    }
+
+
+    private boolean isOperator(String token) {
+        return "+-*/".contains(token);
+    }
 
 }
