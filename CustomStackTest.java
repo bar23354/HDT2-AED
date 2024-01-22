@@ -10,7 +10,7 @@
  public class CustomStackTest {
  
      @Test
-     public void testPushAndPop() {
+     public void LogicTestPushPop() {
          CustomStack<Integer> stack = new CustomStack<>();
  
          // Prueba push
@@ -24,21 +24,21 @@
          stack.push(2);
          stack.push(3);
          stack.push(4);
-         assertEquals(4, stack.pop());
-         assertEquals(3, stack.pop());
          assertEquals(2, stack.pop());
+         assertEquals(3, stack.pop());
+         assertEquals(4, stack.pop());
          assertNull(stack.pop());
      }
  
      @Test
-     public void testPushAndPopStrings() {
+     public void testCustomStackString() {
          CustomStack<String> stack = new CustomStack<>();
  
          // Prueba push y pop de cadenas
          stack.push("Hola");
          stack.push("Mundo");
-         assertEquals("Mundo", stack.pop());
          assertEquals("Hola", stack.pop());
+         assertEquals("Mundo", stack.pop());
          assertNull(stack.pop());
      }
  }
