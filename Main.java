@@ -14,8 +14,8 @@ public class Main {
         // L E E R
         List<String> expressions = FileReader.readExpressions("datos.txt");
 
-        Calculator calculator = new CalculatorPostfix(stack);
-
+        Calculator calculator = new CalculatorPostfix();
+        
         // Evaluar cada expresión e imprimir el resultado
         for (String expression : expressions) {
             try {
